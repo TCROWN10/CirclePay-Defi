@@ -1,0 +1,17 @@
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+library CircleManagerErrors {
+    error ZeroAmount();
+    error TransferFailed();
+    error UnauthorizedCaller();
+    error InvalidChainSelector();
+    error RateLimitExceeded();
+    error ZeroAddress();
+    error InsufficientFee();
+    error MalformedMessageData();
+    error UnknownMessageType();
+    error NoTokensReceived();
+    error InvalidStrategyId();
+
+}

@@ -1,0 +1,22 @@
+{
+  "solidity.defaultCompiler": "remote",
+  "solidhat.compileUsingRemoteVersion": "0.8.20",
+  "solidity.packageDefaultDependenciesDirectory": "node_modules",
+  "solidity.remappings": [
+    "@openzeppelin/=node_modules/@openzeppelin/",
+    "@chainlink/=node_modules/@chainlink/",
+    "hardhat/=node_modules/hardhat/"
+  ],
+  "solidity.includePath": [
+    "contracts/**/*",
+    "node_modules/**/*"
+  ],
+  "files.associations": {
+    "*.sol": "solidity"
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/cache": true,
+    "**/artifacts": true
+  }
+}
