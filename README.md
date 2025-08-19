@@ -1,13 +1,13 @@
-# SageFi - Your AI Financial Navigator for DeFi
+# CirclePay-Defi - Your AI Financial Navigator for DeFi
 
 ![alt text](image.png)
 
 
 ## 🚀 Overview
 
-SageFi is a revolutionary AI-powered financial platform that makes complex multi-chain finance accessible through natural language interactions. By combining ElizaOS AI agents with Chainlink's robust oracle infrastructure, SageFi eliminates the technical barriers that prevent mainstream adoption of decentralized finance.
+CirclePay-Defi is a revolutionary AI-powered financial platform that makes complex multi-chain finance accessible through natural language interactions. By combining ElizaOS AI agents with Chainlink's robust oracle infrastructure, CirclePay-Defi eliminates the technical barriers that prevent mainstream adoption of decentralized finance.
 
-Think of SageFi as your personal financial navigator - an intelligent assistant that understands your goals and executes sophisticated financial strategies across multiple blockchain networks, all through simple conversations.
+Think of CirclePay-Defi as your personal financial navigator - an intelligent assistant that understands your goals and executes sophisticated financial strategies across multiple blockchain networks, all through simple conversations.
 
 ## 🎯 Problem Statement
 
@@ -21,7 +21,7 @@ Current DeFi platforms suffer from:
 
 ## 💡 Solution
 
-SageFi introduces the world's first **Conversational Finance Platform** where users can:
+CirclePay-Defi introduces the world's first **Conversational Finance Platform** where users can:
 
 ### 🤖 Chat with AI for DeFi Operations
 - *"Show me the best yield farming opportunities across all chains"*
@@ -160,8 +160,8 @@ Base:       0x571621Ce60Cebb0c1D442B5afb38B1663C6Bf017
 
 1. **Clone the repository**
 ```bash
-git clone https://github.com/mrwicks00/SageFinance.git
-cd sagefi
+git clone https://github.com/TCROWN10/CirclePay-Defi.git
+cd CirclePay-Defi
 ```
 
 2. **Install dependencies**
@@ -212,7 +212,7 @@ npx hardhat run scripts/deploy.js --network sepolia
 2. Connect your MetaMask wallet
 3. Switch to Sepolia testnet
 4. Get testnet USDC from faucet
-5. Chat with SageFi: *"Show me yield opportunities for 1000 USDC"*
+5. Chat with CirclePay-Defi: *"Show me yield opportunities for 1000 USDC"*
 
 ## 💬 User Experience
 
@@ -220,7 +220,7 @@ npx hardhat run scripts/deploy.js --network sepolia
 
 **User**: *"I want to put $10,000 to work but keep it safe"*
 
-**🤖 SageFi**: *"Perfect! Let me analyze safe options across all chains..."*
+**🤖 CirclePay-Defi**: *"Perfect! Let me analyze safe options across all chains..."*
 
 *[Chainlink Price Feeds checking rates...]*
 
@@ -233,7 +233,7 @@ Want details on any of these?"*
 
 **User**: *"Tell me about the multi-chain option"*
 
-**🤖 SageFi**: *"Great choice! Here's the breakdown:
+**🤖 CirclePay-Defi**: *"Great choice! Here's the breakdown:
 • $4,000 → Ethereum Aave (4.2% APY)
 • $3,000 → Arbitrum Aave (4.6% APY)  
 • $3,000 → Base Moonwell (4.8% APY)
@@ -322,7 +322,7 @@ We welcome contributions from the community! Please read our [Contributing Guide
 
 ## 📞 Contact & Support
 
-- **Website**: https://sage-finance.vercel.app/
+- **Website**: https://circlepay-defi.vercel.app/
 - **Twitter**: coming soon
 
 ## 🔗 Links
@@ -337,4 +337,4 @@ We welcome contributions from the community! Please read our [Contributing Guide
 
 **Built with ❤️ for the future of decentralized finance**
 
-*SageFi - Making DeFi as easy as having a conversation*# CirclePay-Defi
+*CirclePay-Defi - Making DeFi as easy as having a conversation*
