@@ -45,9 +45,14 @@ export function Footer() {
               <Image 
                 src="/CirclePay-Logo.png" 
                 alt="CirclePay Logo" 
-                width={120} 
-                height={120} 
-                className="w-24 h-24 sm:w-32 sm:h-32 lg:w-36 lg:h-36 rounded-lg drop-shadow-lg" 
+                width={80} 
+                height={80} 
+                className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-lg drop-shadow-md object-contain" 
+                priority
+                style={{
+                  imageRendering: 'crisp-edges',
+                  WebkitImageRendering: 'crisp-edges'
+                }}
               />
             </div>
             <p className="text-[#5F7290] text-xs sm:text-sm mb-4">

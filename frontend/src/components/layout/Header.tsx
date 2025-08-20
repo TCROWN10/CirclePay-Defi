@@ -60,9 +60,14 @@ export function Header() {
             <Image
               src="/CirclePay-Logo.png"
               alt="CirclePay Logo"
-              width={120}
-              height={120}
-              className="w-24 h-24 sm:w-28 sm:h-28 lg:w-32 lg:h-32 rounded-lg drop-shadow-lg transition-transform duration-300 hover:scale-105"
+              width={80}
+              height={80}
+              className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-lg drop-shadow-md transition-transform duration-300 hover:scale-105 object-contain"
+              priority
+              style={{
+                imageRendering: 'crisp-edges',
+                WebkitImageRendering: 'crisp-edges'
+              }}
             />
           </Link>
 
