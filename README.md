@@ -1,6 +1,17 @@
 # CirclePay-Defi - Your AI Financial Navigator for DeFi
 
-![alt text](image.png)
+## 📱 Application Screenshots
+
+### 🏠 Landing Page
+![CirclePay Landing Page](https://github.com/TCROWN10/CirclePay-Defi/raw/main/frontend/public/CirclePay-Landing-Screenshot.png)
+
+*CirclePay's modern, mobile-responsive landing page featuring AI-powered DeFi navigation with clean design and intuitive user interface*
+
+### 🎨 Design Features
+- **Modern UI/UX**: Clean, professional interface with Circle Gold (#F7B801) accents
+- **Mobile-First Design**: Fully responsive across all devices (mobile, tablet, desktop)
+- **AI Integration**: Conversational interface for DeFi operations
+- **Multi-Chain Support**: Visual indicators for Ethereum, Base, and Arbitrum networks
 
 
 ## 🚀 Overview
