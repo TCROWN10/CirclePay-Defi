@@ -16,11 +16,27 @@ export const metadata: Metadata = {
   title: "CirclePay - Your AI Financial Navigator for DeFi",
   description:
     "Execute sophisticated cross-chain strategies through simple conversations. No technical knowledge required.",
-    icons: {
-          icon: '/CirclePay-Icon.png', // CirclePay icon
+  keywords: ["DeFi", "AI", "Blockchain", "Yield Farming", "Cross-Chain", "CirclePay"],
+  authors: [{ name: "CirclePay Team" }],
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
+  themeColor: "#1F1A46",
+  colorScheme: "light dark",
+  icons: {
+    icon: '/CirclePay-Icon.png', // CirclePay icon
     shortcut: '/CirclePay-Icon.png',
-      // for iOS devices
-    },
+    // for iOS devices
+  },
+  openGraph: {
+    title: "CirclePay - Your AI Financial Navigator for DeFi",
+    description: "Execute sophisticated cross-chain strategies through simple conversations. No technical knowledge required.",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CirclePay - Your AI Financial Navigator for DeFi",
+    description: "Execute sophisticated cross-chain strategies through simple conversations. No technical knowledge required.",
+  },
 }
 
 export default function RootLayout({
@@ -30,6 +46,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+        <meta name="theme-color" content="#1F1A46" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="CirclePay" />
+        <meta name="format-detection" content="telephone=no" />
+      </head>
       <body className={inter.className}>
         <Web3Provider>
           {children}

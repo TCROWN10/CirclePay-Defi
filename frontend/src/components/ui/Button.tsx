@@ -9,7 +9,7 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 export function Button({ variant = "primary", size = "md", className, children, ...props }: ButtonProps) {
   const baseStyles =
-    "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
+    "inline-flex items-center justify-center rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed touch-manipulation"
 
   const variants = {
     primary: "bg-[#5CA9DE] text-white hover:bg-[#4A8BC7] focus:ring-[#5CA9DE]",
@@ -19,10 +19,10 @@ export function Button({ variant = "primary", size = "md", className, children, 
   }
 
   const sizes = {
-    sm: "px-3 py-1.5 text-sm",
-    md: "px-4 py-2 text-base",
-    lg: "px-6 py-3 text-lg",
-    icon: "h-10 w-10 p-0", // Square button for icons
+    sm: "px-2 sm:px-3 py-1 sm:py-1.5 text-xs sm:text-sm",
+    md: "px-3 sm:px-4 py-1.5 sm:py-2 text-sm sm:text-base",
+    lg: "px-4 sm:px-6 py-2 sm:py-3 text-base sm:text-lg",
+    icon: "h-8 w-8 sm:h-10 sm:w-10 p-0", // Square button for icons
   }
 
   return (

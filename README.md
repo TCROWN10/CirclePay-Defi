@@ -133,12 +133,10 @@ Base:       0x571621Ce60Cebb0c1D442B5afb38B1663C6Bf017
 ## 🎨 Design System
 
 ### Color Palette
-- **Circle Gold**: `#F7B801` (main accent)
+- **Circle blue**: `#F7B801` (main accent)
 - **Deep Black**: `#0A0A0A` (backgrounds)
 - **Pure White**: `#FFFFFF` (text & cards)
-- **Dark Gray**: `#1A1A1A` (secondary backgrounds)
-- **Success Green**: `#10B981` (positive actions)
-- **Warning Orange**: `#F59E0B` (alerts)
+
 
 ### Design Principles
 - Clean, modern glassmorphism effects

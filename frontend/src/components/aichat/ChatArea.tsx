@@ -31,8 +31,8 @@ interface ChatAreaProps {
 
 export function ChatArea({ messages, isTyping, transactionPreviews }: ChatAreaProps) {
   return (
-    <ScrollArea className="flex-1 p-6">
-      <div className="max-w-4xl mx-auto space-y-6">
+    <ScrollArea className="flex-1 p-3 sm:p-4 md:p-6">
+      <div className="max-w-4xl mx-auto space-y-4 sm:space-y-6">
         {messages.length === 0 && <WelcomeScreen />}
 
         {messages.map((message) => (

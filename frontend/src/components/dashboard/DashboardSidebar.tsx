@@ -11,6 +11,7 @@ import {
   TrendingUp,
   ChevronLeft,
   ChevronRight,
+  X,
 } from "lucide-react";
 
 const NAVIGATION_ITEMS = [
@@ -61,17 +62,33 @@ export function DashboardSidebar({ className }: DashboardSidebarProps) {
       } ${className}`}
     >
       <div className="flex flex-col h-full">
-        {/* Collapse Toggle */}
-        <div className="flex justify-end p-4">
+        {/* Collapse Toggle - Hidden on mobile */}
+        <div className="hidden lg:flex justify-end p-4">
           <button
             onClick={() => setIsCollapsed(!isCollapsed)}
             className="p-2 text-gray-300 hover:text-white transition-colors rounded-lg hover:bg-white/10"
+            aria-label="Toggle sidebar collapse"
           >
             {isCollapsed ? (
               <ChevronRight className="w-4 h-4" />
             ) : (
               <ChevronLeft className="w-4 h-4" />
             )}
+          </button>
+        </div>
+
+        {/* Mobile Close Button */}
+        <div className="lg:hidden flex justify-end p-4">
+          <button
+            onClick={() => {
+              // This will be handled by the parent component
+              const event = new CustomEvent('closeMobileSidebar');
+              window.dispatchEvent(event);
+            }}
+            className="p-2 text-gray-300 hover:text-white transition-colors rounded-lg hover:bg-white/10"
+            aria-label="Close sidebar"
+          >
+            <X className="w-4 h-4" />
           </button>
         </div>
 

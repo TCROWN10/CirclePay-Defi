@@ -13,12 +13,14 @@ export default function HomePage() {
   return (
     <main className="min-h-screen bg-black">
       <Header />
-      <HeroSection />
-      <TrustIndicators />
-      <FeatureGrid />
-      <AIIntegrationSection /> 
-      <StakingSection />
-      <FAQSection />
+      <div className="pt-16 lg:pt-20"> {/* Add top padding for fixed header */}
+        <HeroSection />
+        <TrustIndicators />
+        <FeatureGrid />
+        <AIIntegrationSection /> 
+        <StakingSection />
+        <FAQSection />
+      </div>
       <Footer />
     </main>
   )
