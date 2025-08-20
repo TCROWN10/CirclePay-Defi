@@ -3,15 +3,27 @@
 ## 📱 Application Screenshots
 
 ### 🏠 Landing Page
-![CirclePay Landing Page](https://github.com/TCROWN10/CirclePay-Defi/raw/main/frontend/public/CirclePay-Landing-Screenshot.png)
+![CirclePay Application](https://github.com/TCROWN10/CirclePay-Defi/raw/main/frontend/public/3D%20Hand%20Cashless%20Payment.png)
 
-*CirclePay's modern, mobile-responsive landing page featuring AI-powered DeFi navigation with clean design and intuitive user interface*
+*CirclePay's modern, mobile-responsive DeFi platform featuring AI-powered financial navigation and cross-chain operations*
+
+### 📱 Mobile Interface
+![CirclePay Logo](https://github.com/TCROWN10/CirclePay-Defi/raw/main/frontend/public/CirclePay-Logo.png)
+
+*CirclePay's professional branding and mobile-first design approach*
 
 ### 🎨 Design Features
 - **Modern UI/UX**: Clean, professional interface with Circle Gold (#F7B801) accents
 - **Mobile-First Design**: Fully responsive across all devices (mobile, tablet, desktop)
 - **AI Integration**: Conversational interface for DeFi operations
 - **Multi-Chain Support**: Visual indicators for Ethereum, Base, and Arbitrum networks
+
+### 📸 Adding Your Own Screenshots
+To add your own application screenshots:
+1. Save your screenshot as `CirclePay-Landing-Screenshot.png`
+2. Place it in the `frontend/public/` directory
+3. Update the image reference above to use your screenshot
+4. Commit and push the changes
 
 
 ## 🚀 Overview
