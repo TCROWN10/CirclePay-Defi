@@ -90,6 +90,7 @@ export function HeroSection() {
                 variant="outline"
                 size="lg"
                 className="border-gray-400 text-gray-600 hover:bg-[#1F1A46] hover:text-white transform hover:scale-105 transition-all duration-300 bg-transparent w-full sm:w-auto text-sm sm:text-base"
+                onClick={() => window.open('https://www.youtube.com/watch?v=9uAXSPPLRlE', '_blank')}
               >
                 <Play className="w-4 h-4 mr-2" />
                 Watch Demo

@@ -251,7 +251,10 @@ export function AIIntegrationSection() {
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </button>
               </Link>
-              <button className="flex-1 bg-[#F3F7FA] hover:bg-[#E5E9EC] border border-[#E5E9EC] hover:border-[#5CA9DE]/30 text-[#0C1523] font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 group flex items-center justify-center">
+              <button 
+                className="flex-1 bg-[#F3F7FA] hover:bg-[#E5E9EC] border border-[#E5E9EC] hover:border-[#5CA9DE]/30 text-[#0C1523] font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 group flex items-center justify-center"
+                onClick={() => window.open('https://www.youtube.com/watch?v=9uAXSPPLRlE', '_blank')}
+              >
                 <ExternalLink className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
                 View Demo
               </button>
