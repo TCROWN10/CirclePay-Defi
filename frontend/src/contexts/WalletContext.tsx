@@ -29,6 +29,7 @@ interface WalletContextType {
   error: string | null;
   supportedNetworksList: Chain[];
   isLoading: boolean;
+  connectWeb3Auth: () => Promise<void>;
 }
 
 interface TokenHolding {
@@ -91,6 +92,18 @@ export function WalletProvider({ children }: { children: ReactNode }) {
     ];
     setHoldings(mockHoldings);
   }, [balance?.formatted]);
+
+  // Web3Auth connection method
+  const connectWeb3Auth = useCallback(async () => {
+    try {
+      // For now, this is a placeholder - you can implement actual Web3Auth logic here
+      toast.info("Web3Auth integration coming soon!");
+      console.log("Web3Auth connection requested");
+    } catch (error) {
+      console.error("Web3Auth connection failed:", error);
+      toast.error("Web3Auth connection failed");
+    }
+  }, []);
 
   useEffect(() => {
     if (address && isConnected) {
@@ -160,6 +173,7 @@ export function WalletProvider({ children }: { children: ReactNode }) {
     error,
     supportedNetworksList,
     isLoading,
+    connectWeb3Auth,
   };
 
   return (

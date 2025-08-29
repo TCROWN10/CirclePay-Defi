@@ -95,16 +95,16 @@ export function DashboardHeader() {
             <Image
               src="/CirclePay-Logo.png"
               alt="CirclePay Logo"
-              width={80}
-              height={80}
-              className="w-16 h-16 sm:w-20 sm:h-20 rounded-lg drop-shadow-md object-contain"
+              width={160}
+              height={160}
+              className="w-24 h-24 sm:w-28 sm:h-28 lg:w-36 lg:h-36 object-contain"
               priority
               style={{
                 imageRendering: 'crisp-edges',
                 WebkitImageRendering: 'crisp-edges'
               }}
               onError={(e) => {
-                e.currentTarget.src = 'https://placehold.co/80x80/1a202c/ffffff?text=Logo';
+                e.currentTarget.src = 'https://placehold.co/160x160/1a202c/ffffff?text=Logo';
               }} 
             />
           </Link>

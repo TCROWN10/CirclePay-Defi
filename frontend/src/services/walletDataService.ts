@@ -28,7 +28,10 @@ class WalletDataService {
   async getNativeBalance(address: string, chainId: number): Promise<string> {
     try {
       const alchemyUrl = this.getAlchemyUrl(chainId)
-      if (!alchemyUrl) throw new Error('Unsupported chain')
+      if (!alchemyUrl) {
+        console.warn(`Unsupported chain ${chainId} for Alchemy, returning 0 balance`)
+        return '0'
+      }
 
       const response = await fetch(alchemyUrl, {
         method: 'POST',
@@ -58,7 +61,10 @@ class WalletDataService {
   async getTokenHoldings(address: string, chainId: number): Promise<TokenHolding[]> {
     try {
       const alchemyUrl = this.getAlchemyUrl(chainId)
-      if (!alchemyUrl) return []
+      if (!alchemyUrl) {
+        console.warn(`Unsupported chain ${chainId} for Alchemy, returning empty token holdings`)
+        return []
+      }
 
       const response = await fetch(`${alchemyUrl}/getTokenBalances`, {
         method: 'POST',
@@ -142,7 +148,15 @@ class WalletDataService {
   async getTokenMetadata(contractAddress: string, chainId: number) {
     try {
       const alchemyUrl = this.getAlchemyUrl(chainId)
-      if (!alchemyUrl) throw new Error('Unsupported chain')
+      if (!alchemyUrl) {
+        console.warn(`Unsupported chain ${chainId} for Alchemy, returning default metadata`)
+        return {
+          symbol: 'UNKNOWN',
+          name: 'Unknown Token',
+          decimals: 18,
+          logoURI: undefined,
+        }
+      }
 
       const response = await fetch(`${alchemyUrl}/getTokenMetadata`, {
         method: 'POST',
@@ -170,6 +184,7 @@ class WalletDataService {
         symbol: 'UNKNOWN',
         name: 'Unknown Token',
         decimals: 18,
+        logoURI: undefined,
       }
     }
   }
@@ -201,26 +216,58 @@ class WalletDataService {
 
   // Helper methods
   private getAlchemyUrl(chainId: number): string | null {
-    if (!this.ALCHEMY_API_KEY) return null
-    
-    const networks: Record<number, string> = {
-      1: `https://eth-mainnet.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`,
-      11155111: `https://eth-sepolia.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`,
-      137: `https://polygon-mainnet.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`,
-      80001: `https://polygon-mumbai.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`,
+    if (!this.ALCHEMY_API_KEY) {
+      console.warn('Alchemy API key not configured, using fallback RPC endpoints')
+      return null
     }
     
-    return networks[chainId] || null
+    const networks: Record<number, string> = {
+      // Mainnets
+      1: `https://eth-mainnet.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`,
+      137: `https://polygon-mainnet.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`,
+      56: `https://bsc-mainnet.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`,
+      43114: `https://avalanche-mainnet.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`,
+      
+      // Testnets
+      11155111: `https://eth-sepolia.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`, // Sepolia
+      80001: `https://polygon-mumbai.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`, // Mumbai
+      97: `https://bsc-testnet.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`, // BSC Testnet
+      43113: `https://avalanche-testnet.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`, // Avalanche Testnet
+      
+      // Layer 2s
+      8453: `https://base-mainnet.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`, // Base
+      84532: `https://base-sepolia.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`, // Base Sepolia
+      42161: `https://arb-mainnet.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`, // Arbitrum
+      421614: `https://arb-sepolia.g.alchemy.com/v2/${this.ALCHEMY_API_KEY}`, // Arbitrum Sepolia
+    }
+    
+    const alchemyUrl = networks[chainId]
+    if (!alchemyUrl) {
+      console.warn(`Chain ${chainId} not supported by Alchemy, consider using alternative data sources`)
+    }
+    
+    return alchemyUrl || null
   }
 
   private getChainName(chainId: number): string {
     const chains: Record<number, string> = {
+      // Mainnets
       1: 'eth',
-      11155111: 'sepolia',
       137: 'polygon',
-      80001: 'mumbai',
       56: 'bsc',
       43114: 'avalanche',
+      
+      // Testnets
+      11155111: 'sepolia',
+      80001: 'mumbai',
+      97: 'bsc-testnet',
+      43113: 'avalanche-testnet',
+      
+      // Layer 2s
+      8453: 'base',
+      84532: 'base-sepolia',
+      42161: 'arbitrum',
+      421614: 'arbitrum-sepolia',
     }
     
     return chains[chainId] || 'eth'

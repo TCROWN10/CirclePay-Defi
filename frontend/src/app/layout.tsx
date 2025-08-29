@@ -1,7 +1,7 @@
 // src/app/layout.tsx (or similar path)
 
 import type React from "react"
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { Web3Provider } from "../providers/Web3Provider"
@@ -18,9 +18,6 @@ export const metadata: Metadata = {
     "Execute sophisticated cross-chain strategies through simple conversations. No technical knowledge required.",
   keywords: ["DeFi", "AI", "Blockchain", "Yield Farming", "Cross-Chain", "CirclePay"],
   authors: [{ name: "CirclePay Team" }],
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
-  themeColor: "#1F1A46",
-  colorScheme: "light dark",
   icons: {
     icon: '/CirclePay-Icon.png', // CirclePay icon
     shortcut: '/CirclePay-Icon.png',
@@ -39,6 +36,15 @@ export const metadata: Metadata = {
   },
 }
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: "#1F1A46",
+  colorScheme: "light dark",
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -47,8 +53,6 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
-        <meta name="theme-color" content="#1F1A46" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="CirclePay" />
